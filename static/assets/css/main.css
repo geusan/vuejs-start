@@ -1,0 +1,48 @@
+* {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #f1f1f1;
+  padding: 16px;
+}
+
+ol, ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li,
+ol li {
+  list-style: none;
+}
+
+.article-parent {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+article {
+  margin: 10px 10px;
+  min-height: 100px;
+  background-color: white;
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .12);
+  border-radius: 3px;
+  padding: 6px 12px;
+  max-width: 300px;
+}
+
+.chip {
+  padding: 3px 6px;
+  background-color: #152670;
+  color: white;
+  margin: 1px 3px;
+  line-height: 2;
+  border-radius: 3px;
+}
+
+div.active {
+  background-color: red;
+  color: white;
+}

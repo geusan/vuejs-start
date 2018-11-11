@@ -1,0 +1,23 @@
+{
+  "name": "vuejs-study",
+  "version": "1.0.0",
+  "description": "우물128 세션 VueJS 강의를 위해 준비한 튜토리얼 강의 입니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geusan/vuejs-start.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geusan/vuejs-start/issues"
+  },
+  "homepage": "https://github.com/geusan/vuejs-start#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

@@ -1,0 +1,179 @@
+<html>
+
+  <head>
+    <title>VueJs Start</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+
+  <body>
+
+    <div>
+      <h1>VueJs 시작해보기!</h1>
+    </div>
+
+    <div class="article-parent">
+
+      <article>
+        <h5>v-model을 이용한 데이터 변환</label>
+        <div id="app">
+          <h1>{{ text }}</h1>
+          <input v-model="text"/>
+        </div>
+      </article>
+
+      <script>
+        const app = new Vue({
+          el: '#app',
+          data: {
+            text: 'hi'
+          }
+        })
+      </script>
+      
+      
+      <article>
+        <h5>반복문을 활용한 여러가지 데이터 출력</label>
+        <div id="app2">
+          <ul>
+            <li v-for="li in list" :key="list.name">
+              {{ li.name }} - {{ li.age }}
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <script>
+        const app2 = new Vue({
+          el: '#app2',
+          data: {
+            list: [
+              { name: '노종원', age: '20대' },
+              { name: '백종원', age: '50대' },
+              { name: '김종원', age: '???' },
+            ]
+          }
+        })
+      </script>
+
+      <article>
+        <h5>if문을 활용한 선택적 렌더링</h5>
+        <div id="app3">
+          <label>체크상태: {{ flag }}</label>
+          <input type="checkbox" v-model="flag"/>
+          <div>
+            <span v-if="flag">체크 ON!</span>
+            <span v-else>체크 OFF!</span>
+          </div>
+        </div>
+      </article>
+
+      <script>
+        const app3 = new Vue({
+          el: '#app3',
+          data: {
+            flag: false
+          }
+        })
+      </script>
+
+
+      <article>
+        <h5>computed 활용</h5>
+        <div id="app4">
+          <label>콤마로 구분해서 입력해보세요</label>
+          <div>
+            <input type="text" v-model="listedArray" />
+          </div>
+          <div style="padding: 12px;">
+            <span class="chip" v-for="(list, idx) in array.slice(0, array.length - 1)" :key="'list-'+ idx + '-' + list">
+              {{ list }}
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <script>
+        const app4 = new Vue({
+          el: '#app4',
+          data: {
+            array: []
+          },
+          computed: {
+            listedArray: {
+              get() {
+                return this.array.join(',')
+              },
+              set(nv) {
+                this.array = nv.split(',')
+              }
+            }
+          }
+        })
+      </script>
+
+
+      <article>
+        <h5>filter 활용</h5>
+        <div id="app5">
+          <label>돈을 입력하면 자동으로 쉼표 넣기</label>
+          <div>
+            <input type="number" v-model="amount"/>
+          </div>
+          <div>
+            <span>₩{{amount | thousandSeparator }}</span>
+          </div>
+        </div>
+      </article>
+
+      <script>
+        const app5 = new Vue({
+          el: '#app5',
+          data: {
+            amount: 0
+          },
+          filters: {
+            thousandSeparator: function (v) {
+              return Number(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+            }
+          }
+        })
+      </script>
+
+
+      <article>
+        <h5>watch 활용한 감지</h5>
+        <div id="app6" :class="{ active: flag }">
+          <label>특정 단어가 입력되면 색상이 변합니다.(우물)</label>
+          <div>
+            <input type="text" v-model="text"/>
+          </div>
+          <div>
+            <span>입력된 텍스트: {{text}}</span>
+          </div>
+        </div>
+      </article>
+
+      <script>
+        const app6 = new Vue({
+          el: '#app6',
+          data: {
+            text: '',
+            flag: false,
+          },
+          watch: {
+            text(nv) {
+              this.flag = nv.includes('우물')
+            }
+          }
+        })
+      </script>
+
+    </div>
+
+
+
+  </body>
+
+
+</html>
