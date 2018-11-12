@@ -6,9 +6,9 @@
 
 ### VueJS 시작하기
 ``` bash
-git clone https://github.com/geusan/vue-start.git
+git clone https://github.com/geusan/vuejs-start.git
 
-cd vue-start
+cd vuejs-start
 
 # 라이브러리 설치
 npm install
