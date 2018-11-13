@@ -30,6 +30,31 @@
           }
         })
       </script>
+
+
+      <article>
+        <h5>v-on:Event 이용한 이벤트 바인딩</label>
+        <div id="app1">
+          <h1>hits:{{ count }}</h1>
+          <button v-on:click="count++">click me!</button>
+
+          <button @click="showAlert('show alert!!! with message')">show alert!</button>
+        </div>
+      </article>
+
+      <script>
+        const app1 = new Vue({
+          el: '#app1',
+          data: {
+            count: 0
+          },
+          methods: {
+            showAlert(msg) {
+              alert(msg)
+            }
+          }
+        })
+      </script>
       
       
       <article>

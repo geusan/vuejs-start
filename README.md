@@ -13,7 +13,7 @@ cd vuejs-start
 # 라이브러리 설치
 npm install
 
-# 실행 localhost:3000 에서 돌아간당
+# 실행 localhost:4000 에서 돌아갑니당
 node index.js
 
 ```

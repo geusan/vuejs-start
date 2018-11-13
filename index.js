@@ -10,6 +10,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 })
 
-app.listen(3000, () => {
-  console.log('Express app is running on http://localhost:3000')
+app.listen(4000, () => {
+  console.log('Express app is running on http://localhost:4000')
 })
