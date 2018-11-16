@@ -4,8 +4,10 @@
   padding: 0;
 }
 body {
-  background: #f1f1f1;
+  background: #333;
   padding: 16px;
+  font-size: 1.2em;
+  color: #fff9c4;
 }
 
 ol, ul {
@@ -26,11 +28,24 @@ ol li {
 article {
   margin: 10px 10px;
   min-height: 100px;
-  background-color: white;
+  background-color: #37474f;
   box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .12);
   border-radius: 3px;
   padding: 6px 12px;
   max-width: 300px;
+}
+
+button {
+  padding: 3px 6px;
+  background-color: #4b636e;
+  color: white;
+  border-radius: 3px;
+}
+
+input {
+  padding: 3px 6px;
+  background-color: #4b636e;
+  color: white;
 }
 
 .chip {
@@ -43,6 +58,6 @@ article {
 }
 
 div.active {
-  background-color: red;
-  color: white;
+  background-color: #fff9c4;
+  color: #37474f;
 }

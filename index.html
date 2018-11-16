@@ -194,6 +194,61 @@
         })
       </script>
 
+      <article>
+        <h5>간단한 ToDoList</h5>
+        <div id="app7">
+          <label>단어를 입력하고 버튼을 눌러보세요</label>
+          <div>
+            <input type="text" v-model="text" />
+            <button @click="addItem">입력</button>
+          </div>
+          <div>
+            <ul>
+              <li v-for="(item, idx) in items" :key="'item-' + idx + '-' + item">
+                <input type="checkbox" :value="item.done" @input="doneItem(item)"/>
+                <span :style="{ textDecoration: item.done ? 'line-through' : 'normal' }">{{ item.description }}</span>
+                <button @click="deleteItem(item)">삭제</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <script>
+        const app7 = new Vue({
+          el: '#app7',
+          data: {
+            text: '',
+            items: []
+          },
+          watch: {
+            text(nv) {
+              this.flag = nv.includes('우물')
+            }
+          },
+          methods: {
+            addItem(e) {
+              if (this.text) {
+                this.items.push({
+                  description: this.text,
+                  done: false
+                })
+                this.text = ''
+              } else {
+                alert('입력해주세요')
+              }
+            },
+            doneItem(item) {
+              item.done = !item.done
+            },
+            deleteItem(item) {
+              const idx = this.items.indexOf(item)
+              this.items.splice(idx, 1)
+            }
+          }
+        })
+      </script>
+
     </div>
 
 
